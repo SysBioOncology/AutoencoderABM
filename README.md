@@ -1,4 +1,6 @@
 # AutoencoderABM
+NOTE : repository is being updated to complete all documentation within the code
+
 Repository to reproduce results and figures for proceedings submission DOI TO BE ADDED
 
 This repository consists of four parts: mapping spatial data to ABM grid, optimization of autoencoder, optimization of ABM and reproducing proceedings figures. 
