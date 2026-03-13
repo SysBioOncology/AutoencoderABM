@@ -61,8 +61,8 @@ The following main scripts are present in this folder for the agent-based model:
 - `ModelOptimization.py` : script with functions used for optimization, such as the user-defined loss function and a special simulation function to inspect final model
 
 ## 03_analysis
-This folder contains all the ABM optimization outputs for each step, which can be further analyzed. R scripts are present here to reproduce the figures from the proceedings. 
+*See Zenodo folder "03_ABMoptimization" for optiimzation results of the ABM which can be further analyzed*
 
-There are several main scripts that can be run, either for simulation only (e.g. with optimized parameters, `00_simulation.py`) or for optimization (one script for each data set). In the folder `parameters`, the contents of the script for each data set can be copied into the file with model parameters `Parameters.py` to reproduce the results from the proceedings. 
+There are several main R scripts that can be run, either for simulation only (e.g. with optimized parameters, `00_simulation.py`) or for optimization (one script for each data set). In the folder `parameters`, the contents of the script for each data set can be copied into the file with model parameters `Parameters.py` to reproduce the results from the proceedings. 
 
 
