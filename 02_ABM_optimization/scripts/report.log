@@ -1,0 +1,10 @@
+2026-03-09 21:05:52,759 - pyswarms.single.global_best - INFO - Optimize for 3 iters with {'c1': 2, 'c2': 1, 'w': 0.5}
+2026-03-09 21:09:04,763 - pyswarms.single.global_best - INFO - Optimize for 3 iters with {'c1': 2, 'c2': 1, 'w': 0.5}
+2026-03-09 21:16:32,252 - pyswarms.single.global_best - INFO - Optimize for 3 iters with {'c1': 2, 'c2': 1, 'w': 0.5}
+2026-03-09 21:17:28,330 - pyswarms.single.global_best - INFO - Optimize for 3 iters with {'c1': 2, 'c2': 1, 'w': 0.5}
+2026-03-09 21:17:35,903 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 45.95699315213274, best pos: [0.23871713 0.28823026 0.92533194]
+2026-03-09 21:17:36,240 - pyswarms.single.global_best - INFO - Optimize for 3 iters with {'c1': 2, 'c2': 1, 'w': 0.5}
+2026-03-09 21:20:16,694 - pyswarms.single.global_best - INFO - Optimize for 3 iters with {'c1': 2, 'c2': 1, 'w': 0.5}
+2026-03-09 21:20:21,558 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 3.3490392919215353, best pos: [0.60427972]
+2026-03-09 21:20:21,898 - pyswarms.single.global_best - INFO - Optimize for 3 iters with {'c1': 2, 'c2': 1, 'w': 0.5}
+2026-03-09 21:27:20,122 - pyswarms.single.global_best - INFO - Optimize for 3 iters with {'c1': 2, 'c2': 1, 'w': 0.5}
