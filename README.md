@@ -38,7 +38,7 @@ pip install patchify
 ## Data availability 
 Note that some example files are present in the repository, although the data used for the proceedings need to be downloaded from Zenodo [ADD LINK]. Zenodo includes the following files:
 * original tumoroid and tcga images
-* mapped tumoroid and tcga images (both CSV file for ABM input and image)
+* mapped tumoroid and tcga images (both CSV file for ABM input and image), and generated synthetic images
 * optimized autoencoders and encoders for three data sets: synthetic, tumoroid and TCGA
 * simulation images with optimized ABM parameters
 
