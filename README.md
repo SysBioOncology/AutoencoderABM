@@ -45,7 +45,7 @@ Note that some example files are present in the repository, although the data us
 For each of the sections below, there will be an indication if additional data is needed from Zenodo to reproduce the proceedings results. 
 
 ## 00_prep
-*Download Zenodo folder "00_original/TCGA". These are the original TCGA images* 
+*Download Zenodo folder "00_original/tcga" for the original TCGA images, and 00_original/M07 and 00_original/M10 for the tumoroid images* 
 
 This folder contains the scripts to convert TCGA slides, using [SpoTLighT](https://pubmed.ncbi.nlm.nih.gov/39511301/) outputs, to ABM grid, or tumoroid microscopy images to ABM grid. There are two main scripts (`tcga_patches.py` and `tumoroid_conversion_pipeline.py`) with each a separate utils script with additional functions. 
 
