@@ -56,6 +56,7 @@ A general script (`autoencoder.py`) to optimize loaded images. For each data set
 
 ## 02_ABM_optimization
 *See Zenodo folder "02_autoencoder" for the autoencoder and encoder models for all three data sets (synthetic, tumoroid and TCGA)* 
+The agent-based model was first adapted from [Kather et al.](https://pubmed.ncbi.nlm.nih.gov/28923860/) to Python, in which we also added additional processes focusing on the tumor-lymphocyte interactions. 
 
 The following main scripts are present in this folder for the agent-based model:
 - `Parameters.py` : contains model parameters and is the script in which you can change these values
