@@ -67,10 +67,13 @@ The following main scripts are present in this folder for the agent-based model:
 - `SimResults.py` : a class to save statistics at each step of the simulation (e.g. tumor cell count) and to visualize or calculate additional statistics 
 - `Visualization.py` : contains a function to create a visualization of the cells within the simulation
 - `ModelOptimization.py` : script with functions used for optimization, such as the user-defined loss function and a special simulation function to inspect final model
+   
+There are several main scripts that can be run, either for simulation only (e.g. with optimized parameters, `00_simulation.py`) or for optimization (one script for each data set). In the folder `parameters`, the contents of the script for each data set can be copied into the file with model parameters `Parameters.py` to reproduce the results from the proceedings. 
 
 ## 03_analysis
-*See Zenodo folder "03_ABMoptimization" for optiimzation results of the ABM which can be further analyzed*
+*See Zenodo folder "03_ABMoptimization" for optimization results of the ABM which can be further analyzed*
 
-There are several main R scripts that can be run, either for simulation only (e.g. with optimized parameters, `00_simulation.py`) or for optimization (one script for each data set). In the folder `parameters`, the contents of the script for each data set can be copied into the file with model parameters `Parameters.py` to reproduce the results from the proceedings. 
+The data of each figure in the proceedings can be replicated using the R scripts and data provided in this folder. 
+
 
 
