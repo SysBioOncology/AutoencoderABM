@@ -1,0 +1,4 @@
+file,filled_ratio,n_tumor,n_lymph
+TCGA/example_data//patches/TCGA-BF-A1PZ-01A-01-TSA_patch=1,[0.94647778],[9175],[304]
+TCGA/example_data//patches/TCGA-BF-A1PZ-01A-01-TSA_patch=2,[0.85626111],[7946],[590]
+TCGA/example_data//patches/TCGA-BF-A3DL-01A-01-TS1_patch=1,[0.85006667],[6831],[1606]

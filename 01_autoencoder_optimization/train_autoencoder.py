@@ -54,6 +54,7 @@ if data_set == 'synthetic':
     X_train, y_train = load_data_synthetic(input_folder, samples, duplicates, 
                                            IMrwalk, new_size)
 elif data_set == 'tumoroid':
+    # get data from first experiment 
     one_folder = input_folder + '/data_M07'
     n_zstacks = 1
     start = 4
@@ -67,8 +68,8 @@ elif data_set == 'tumoroid':
                            all_z = None, all_t = None, idx = 0,
                            new_size = (100,100))
     
+    # get data from second experiment 
     one_folder = input_folder + '/data_M10'
-    
     X_train, all_z, all_t, _ = load_data_tumoroid(one_folder, n_zstacks_m10, a,
                            start_m10, n_time, X_train = X_train,
                            all_z = all_z, all_t = all_t, idx=idx,
@@ -80,6 +81,7 @@ elif data_set == 'tcga':
     X_train, y_train = load_data_tcga(input_folder, new_size, samples)
 
 
+# split into train and validation/test sets 
 X_train, X_test, y_train, y_test = train_test_split(X_train, y_train, test_size=0.1, random_state=42)
         
 
@@ -112,7 +114,6 @@ autoencoder.summary()
 #%% Train autoencoder
 fitting_results = autoencoder.fit(X_train, X_train, epochs=epochs, batch_size = batch, 
                                   shuffle = True)
-        
 y_pred = autoencoder.predict(X_train)
 
 

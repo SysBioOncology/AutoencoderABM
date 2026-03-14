@@ -14,34 +14,35 @@ def convert_spotlight2abm(val_pred, samples, x_limits, y_limits,
 
     Parameters
     ----------
-    val_pred : TYPE
-        DESCRIPTION.
-    samples : TYPE
-        DESCRIPTION.
-    x_limits : TYPE
-        DESCRIPTION.
-    y_limits : TYPE
-        DESCRIPTION.
-    size_new_coordinates : TYPE
-        DESCRIPTION.
-    threshold_prob : TYPE
-        DESCRIPTION.
-    key : TYPE
-        DESCRIPTION.
-    limits : TYPE
-        DESCRIPTION.
-    outputFolder : TYPE
-        DESCRIPTION.
-    take_half : TYPE
-        DESCRIPTION.
+    val_pred : dataframe
+        Output of SpoTLighT pipeline with cell type probabilities over 
+        an image divided into tiles 
+    samples : list, array 
+        List of filenames / samples to convert onto ABM grid 
+    x_limits, y_limits : tuple
+        If limits is True, crop the image according to x and y limits (min, max)
+    size_new_coordinates : integer
+        New height and width (height = width) of mapped image
+    threshold_prob : float
+        Threshold for cell type probability, before cell type is assigned to 
+        grid cell 
+    key : dictionary 
+        Dictionary to convert tumor and lymphocyte to an integer value 
+    limits : Boolean
+        Whether to use the given x and y limits to crop the image before 
+        mapping it onto the ABM grid 
+    outputFolder : string
+        Location to save mapped images
+    take_half : Boolean
+        Some images consist of two (similar) tumor slides, so this option can 
+        be used to take only half of the image to focus on one tumor only 
 
     Returns
     -------
-    tile_size_x : TYPE
-        DESCRIPTION.
-    tile_size_y : TYPE
-        DESCRIPTION.
-
+    tile_size_x, tile_size_y : dictionary
+        Dictionary to inspect tile sizes (both x and y directions) of each 
+        sample
+    
     """
     tile_size_x = dict()
     tile_size_y = dict()
@@ -173,29 +174,34 @@ def get_patches(folder, filenames, patch_size, convert_dict, key, outputFolder,
 
     Parameters
     ----------
-    folder : TYPE
-        DESCRIPTION.
-    filenames : TYPE
-        DESCRIPTION.
-    patch_size : TYPE
-        DESCRIPTION.
-    convert_dict : TYPE
-        DESCRIPTION.
-    key : TYPE
-        DESCRIPTION.
-    outputFolder : TYPE
-        DESCRIPTION.
-    threshold_ratio : TYPE
-        DESCRIPTION.
-    new_size : TYPE
-        DESCRIPTION.
-    patient_id : TYPE
-        DESCRIPTION.
-
+    folder : string
+        Location of mapped images that will be divided into patches
+    filenames : list, array 
+        List of sample names 
+    patch_size : tuple
+        Size of the patch, also determines in how many patches the image 
+        can be divided
+    convert_dict : dictionary
+        Dictionary to convert grid content (tumor, lymphocyte, unoccupied) into 
+        value on ABM image 
+    key : dictionary 
+        Dictionary to convert tumor and lymphocyte to an integer value
+    outputFolder : string
+        Folder to save patches 
+    threshold_ratio : float
+        Minimum ratio of image that needs to be filled before patch is 
+        selected for output
+    new_size : tuple
+        Desired height and width of output image
+    patient_id : dataframe
+        Dataframe with immune subtypes (MFP) which can be used to add the
+        immune subtype in the title of the plotted image 
+        
     Returns
     -------
-    chosen_filenames : TYPE
-        DESCRIPTION.
+    chosen_filenames : dictionary
+        Dictionary containing additional annotations for chosen patches, 
+        including filename, filled ratio and number of tumor and lymphocytes
 
     """
     chosen_filenames = {'file':[], 'filled_ratio':[], 'n_tumor':[], 'n_lymph':[]}
@@ -278,28 +284,16 @@ def get_patches(folder, filenames, patch_size, convert_dict, key, outputFolder,
             
 def convert_to_df(array, conv_dict, outputfile):      
     """
-    Conversion image array to dataframe which can be used as initial 
-    configuration of ABM
-
-    Parameters
-    ----------
-    array : TYPE
-        DESCRIPTION.
-    conv_dict : TYPE
-        DESCRIPTION.
-    outputfile : TYPE
-        DESCRIPTION.
-
-    Returns
-    -------
-    None.
-
+    Conversion image array (array) to dataframe using given mapping (conv_dict),
+    and saving the resulting dataframe to a CSV file (outputfile)
     """
+    # go over all values in the array 
     output_dict = {'cell':[], 'x':[], 'y':[], 'stem':[]}
     for row in range(array.shape[0]):
         for col in range(array.shape[1]):
             value = array[row, col]
             
+            # define cell type 
             if value == conv_dict['tumor']:
                 output_dict['cell'].append('tumor')
                 output_dict['stem'].append(0)
@@ -311,7 +305,8 @@ def convert_to_df(array, conv_dict, outputfile):
                 output_dict['stem'].append(0)
                 output_dict['x'].append(row)
                 output_dict['y'].append(col)
-                
+            
+    # save to CSV
     pd.DataFrame(output_dict).to_csv(outputfile, index=False)
 
 

@@ -3,25 +3,25 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt 
 
-from utils import convert_spotlight2abm, get_patches
+from tcga_utils import convert_spotlight2abm, get_patches
 
 #%% Get SpoTlighT output 
 val_pred = pd.read_csv('TCGA/tcga_validation_tile_predictions_proba.csv',
                        delimiter = '\t') 
-patient_id = pd.read_csv('subset_tcga_skcm.csv') # only get desert or immune-enriched
+patient_id = pd.read_csv('TCGA/subset_tcga_skcm.csv') # only get desert or immune-enriched
 val_pred = patient_id.merge(val_pred, how='left', left_on='patient', right_on='TCGA_patient_ID')
 
-samples = val_pred['slide_submitter_id'].unique()
+samples = val_pred['slide_submitter_id'].unique()[:5] # take five samples for example
 x_coords = val_pred['Coord_X']
 y_coords = val_pred['Coord_Y']
 
 #%% Prepare some settings for deriving initial configuration 
-x_limits = (20000, 150000) 
-y_limits = (2000, 50000) 
+x_limits = (50000, 100000) 
+y_limits = (5000, 40000) 
 size_new_coordinates = 5000 # multiple of 10 to transform sparse matrix into a grid for ABM
 threshold_prob = 0.5 # minimum probability for a tile to get the label of a specific cell type 
 key={'tumor':1, 'lymphocyte':2}
-outputFolder = "TCGA/example_data"
+outputFolder = "TCGA/example_data/"
 limits = True
 take_half = True
 
@@ -31,7 +31,7 @@ tile_size_x, tile_size_y = convert_spotlight2abm(val_pred, samples, x_limits, y_
                           outputFolder, take_half)
 
 #%% Create patches
-folder = 'TCGA/example_data' # folder with converted images
+folder = 'TCGA/example_data/' # folder with converted images
 outputFolder = folder + '/patches' # folder to save patches 
 patch_size = (1200, 1200)
 convert_dict = {'tumor':106, 'lymphocyte':156, 'unoccupied':242}
