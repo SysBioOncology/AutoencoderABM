@@ -30,6 +30,11 @@ Particle swarm optimization (PSO) is used for ABM parameter optimization, using 
 pip install pyswarms
 ```
 
+For the TCGA specifically, patchify was used to divide the images into smaller sections:
+```ruby
+pip install patchify
+```
+
 ## Data availability 
 Note that some example files are present in the repository, although the data used for the proceedings need to be downloaded from Zenodo [ADD LINK]. Zenodo includes the following files:
 * original tumoroid and tcga images
