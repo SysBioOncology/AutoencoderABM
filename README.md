@@ -50,7 +50,7 @@ For each of the sections below, there will be an indication if additional data i
 This folder contains the scripts to convert TCGA slides, using [SpoTLighT](https://pubmed.ncbi.nlm.nih.gov/39511301/) outputs, to ABM grid, or tumoroid microscopy images to ABM grid. There are two main scripts (`tcga_patches.py` and `tumoroid_conversion_pipeline.py`) with each a separate utils script with additional functions. 
 
 ## 01_autoencoder_optimization
-*See Zenodo folders "01_mapped/TCGA" and "01_mapped/tumoroid" for all the mapped images, and 01_mapped/synthetic_data for the generated synthetic data*
+*See Zenodo folders "01_mapped/TCGA" for mapped TCGA patches. Mapped tumoroid of two experiments can be found in "01_mapped/data_M07" and "01_mapped/data_M10. The synthetic data are available in 01_mapped/synthetic_data*
 
 A general script (`autoencoder.py`) to optimize loaded images. For each data set, a separate loading function and PCA visualization function are defined (`utils.py`).
 
