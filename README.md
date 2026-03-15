@@ -1,9 +1,5 @@
 # AutoencoderABM
-NOTE : repository is being updated to complete all documentation within the code
-
-Repository to reproduce results and figures for proceedings submission DOI TO BE ADDED
-
-This repository consists of four parts: mapping spatial data to ABM grid, optimization of autoencoder, optimization of ABM and reproducing proceedings figures. 
+Repository to reproduce results and figures for proceedings submission [DOI TO BE ADDED]. This repository consists of four parts: mapping spatial data to ABM grid, optimization of autoencoder, optimization of ABM and reproducing proceedings figures. 
 
 ## Installation 
 The library [mesa](https://mesa.readthedocs.io/latest/) is used to implement the ABM in Python. The following is also provided by them to install the latest stable release:
@@ -36,7 +32,7 @@ pip install patchify
 ```
 
 ## Data availability 
-Note that some example files are present in the repository, although the data used for the proceedings need to be downloaded from Zenodo [ADD LINK]. Zenodo includes the following files:
+Note that some example files are present in the repository, although the data used for the proceedings need to be downloaded from [Zenodo](https://zenodo.org/records/19022344). Zenodo includes the following files:
 * original tumoroid images
 * mapped tumoroid and tcga images (both CSV file for ABM input and image), and generated synthetic images
 * optimized autoencoders and encoders for three data sets: synthetic, tumoroid and TCGA
