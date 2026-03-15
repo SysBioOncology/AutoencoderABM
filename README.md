@@ -1,5 +1,5 @@
 # AutoencoderABM
-Repository to reproduce results and figures for proceedings submission [DOI TO BE ADDED]. This repository consists of four parts: mapping spatial data to ABM grid, optimization of autoencoder, optimization of ABM and reproducing proceedings figures. 
+Repository to reproduce results and figures for [proceedings submission](https://doi.org/10.64898/2026.03.13.711699). This repository consists of four parts: mapping spatial data to ABM grid, optimization of autoencoder, optimization of ABM and reproducing proceedings figures. 
 
 ## Installation 
 The library [mesa](https://mesa.readthedocs.io/latest/) is used to implement the ABM in Python. The following is also provided by them to install the latest stable release:
