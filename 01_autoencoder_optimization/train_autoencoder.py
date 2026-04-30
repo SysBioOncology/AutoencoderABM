@@ -93,16 +93,16 @@ encoding_dim = 2
 input_layer = keras.layers.Input(shape=(input_dim, input_dim, 1))
 
 # Encoder
-x = Conv2D(1, (9, 9), activation="relu", padding="same")(input_layer)
+x = Conv2D(1, (3, 3), activation="relu", padding="same")(input_layer)
 x = MaxPooling2D((2, 2), padding="same")(x)
-x = Conv2D(1, (9, 9), activation="relu", padding="same")(x)
+x = Conv2D(1, (3, 3), activation="relu", padding="same")(x)
 x = MaxPooling2D((2, 2), padding="same")(x)
 x = Flatten()(x)
 
 # Decoder
 x = Reshape((25, 25, 1))(x)
-x = Conv2DTranspose(1, (9, 9), strides=2, activation="relu", padding="same")(x)
-x = Conv2DTranspose(1, (9, 9), strides=2, activation="relu", padding="same")(x)
+x = Conv2DTranspose(1, (3, 3), strides=2, activation="relu", padding="same")(x)
+x = Conv2DTranspose(1, (3, 3), strides=2, activation="relu", padding="same")(x)
 x = Conv2D(1, (3, 3), activation="sigmoid", padding="same")(x)
 
 # Autoencoder

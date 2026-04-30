@@ -31,7 +31,7 @@ def load_data_synthetic(input_folder, samples, duplicates, IMrwalk,
         idx += samples
         for one_sample in range(samples):
             print(f"Loading IMrwalk={str(rwalk)}, sample {one_sample}")
-            for one_dup in range(1, duplicates):
+            for one_dup in range(0, duplicates):
                 filename = f"{input_folder}/IMrwalk={str(rwalk)}/{one_sample}_{one_dup}_TumorCells_ImmuneCells.png"
                 imarray = cv2.imread(filename, cv2.IMREAD_GRAYSCALE) # read image
                 imarray = imarray[936:3912, 600:3576] # crop 
